@@ -1,0 +1,10 @@
+const express = require("express");
+
+const notificationRoutes = require("./modules/notifications/notification.routes");
+require("./cron/expiry.cron");
+
+const app = express();
+
+app.use(express.json());
+app.use("/notifications", notificationRoutes);
+module.exports = app;
